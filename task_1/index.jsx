@@ -1,15 +1,14 @@
-import { Component } from 'react';
+import { PureComponent, memo } from 'react';
 
 // functional component
-const FirstComponent = ({ name }) => (
+ const FirstComponent = ({ name }) => (
     <div>my name is {name}</div>
-);
+)
+export default memo(FirstComponent)
 
 // class component
-class SecondComponent extends Component {
-    render() {
-        return (
-            <div>my name is {this.props.name}</div>
-        )
-    }
+class SecondComponent extends PureComponent {
+  render() {
+    return <div>my name is {this.props.name}</div>;
+  }
 }
